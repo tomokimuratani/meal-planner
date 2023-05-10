@@ -12,8 +12,11 @@ import {
   Checkbox,
   Anchor,
   Stack,
+  Container,
+  Affix,
 } from "@mantine/core";
 import { GoogleButton, TwitterButton } from "../Buttons/SocuakButtons";
+import { IconBorderBottom } from "@tabler/icons-react";
 
 export function AuthenticationForm(props: PaperProps) {
   const [type, toggle] = useToggle(["login", "register"]);
@@ -35,48 +38,53 @@ export function AuthenticationForm(props: PaperProps) {
   });
 
   return (
+       <Affix position={{top:"25%",left:"25%",bottom:"25%",right:"25%"}}>
+
+    <Container size={420} >
     <Paper radius="md" p="xl" withBorder {...props}>
       <Text size="lg" weight={500}>
-        Welcome to Mantine, {type} with
+      {type === "login"
+              ? "ようこそログインしてください"
+              : "ようこそ登録してください"}
       </Text>
 
-      <Group grow mb="md" mt="md">
+      <Group grow mb="md" mt="md"> 
         <GoogleButton radius="xl">Google</GoogleButton>
         <TwitterButton radius="xl">Twitter</TwitterButton>
-      </Group>
+              </Group>
 
-      <Divider label="Or continue with email" labelPosition="center" my="lg" />
+      <Divider label="またはメールで続行してください" labelPosition="center" my="lg" />
 
       <form onSubmit={form.onSubmit(() => {})}>
         <Stack>
           {type === "register" && (
             <TextInput
-              label="Name"
-              placeholder="Your name"
-              value={form.values.name}
-              onChange={(event) =>
-                form.setFieldValue("name", event.currentTarget.value)
-              }
-              radius="md"
+            label="名前"
+            placeholder="あなたの名前"
+            value={form.values.name}
+            onChange={(event) =>
+              form.setFieldValue("name", event.currentTarget.value)
+            }
+            radius="md"
             />
-          )}
+            )}
 
           <TextInput
             required
-            label="Email"
-            placeholder="hello@mantine.dev"
+            label="メールアドレス"
+            
             value={form.values.email}
             onChange={(event) =>
               form.setFieldValue("email", event.currentTarget.value)
             }
             error={form.errors.email && "Invalid email"}
             radius="md"
-          />
+            />
 
           <PasswordInput
             required
-            label="Password"
-            placeholder="Your password"
+            label="パスワード"
+            placeholder="あなたのパスワードを入れてください"
             value={form.values.password}
             onChange={(event) =>
               form.setFieldValue("password", event.currentTarget.value)
@@ -86,17 +94,17 @@ export function AuthenticationForm(props: PaperProps) {
               "Password should include at least 6 characters"
             }
             radius="md"
-          />
+            />
 
           {type === "register" && (
             <Checkbox
-              label="I accept terms and conditions"
-              checked={form.values.terms}
-              onChange={(event) =>
-                form.setFieldValue("terms", event.currentTarget.checked)
-              }
+            label="I accept terms and conditions"
+            checked={form.values.terms}
+            onChange={(event) =>
+              form.setFieldValue("terms", event.currentTarget.checked)
+            }
             />
-          )}
+            )}
         </Stack>
 
         <Group position="apart" mt="xl">
@@ -106,10 +114,10 @@ export function AuthenticationForm(props: PaperProps) {
             color="dimmed"
             onClick={() => toggle()}
             size="xs"
-          >
+            >
             {type === "register"
-              ? "Already have an account? Login"
-              : "Don't have an account? Register"}
+              ? "すでにアカウントお持ちの場合は、 ログイン"
+              : "アカウントをお持ちでない場合は、 登録"}
           </Anchor>
           <Button type="submit" radius="xl">
             {upperFirst(type)}
@@ -117,5 +125,8 @@ export function AuthenticationForm(props: PaperProps) {
         </Group>
       </form>
     </Paper>
+    </Container>
+               </Affix> 
+
   );
 }
