@@ -40,12 +40,12 @@ export function FooterSocial() {
     <div className={classes.footer}>
       <Container className={classes.inner}>
         <MantineLogo size={28} />
-        <Group
-          spacing={0}
-          className={classes.links}
-          position="right"
-          noWrap
-        ></Group>
+        <Group spacing={0} className={classes.links} position="right" noWrap>
+          <IconBrandTwitter />
+          <IconBrandYoutube />
+          <IconBrandInstagram />
+        </Group>
+        &copy; {new Date().getFullYear()} 村谷 友基
       </Container>
     </div>
   );
