@@ -16,7 +16,7 @@ const useStyles = createStyles((theme) => ({
   header: {
     backgroundColor: theme.fn.variant({
       variant: "filled",
-      color: theme.primaryColor,
+      color: "green",
     }).background,
     borderBottom: 0,
   },
@@ -52,8 +52,7 @@ const useStyles = createStyles((theme) => ({
 
     "&:hover": {
       backgroundColor: theme.fn.lighten(
-        theme.fn.variant({ variant: "filled", color: theme.primaryColor })
-          .background!,
+        theme.fn.variant({ variant: "filled", color: "green" }).background!,
         0.1
       ),
     },

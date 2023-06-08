@@ -11,10 +11,18 @@ export default function Home() {
       <HeaderMenuColored
         links={[
           {
-            link: "/login",
-            label: "ログイン",
+            link: "http://example.com",
+            label: "履歴",
           },
-          { link: "http://example.com", label: "会員登録" },
+          {
+            link: "http://example.com",
+            label: "記録",
+          },
+          {
+            link: "http://example.com",
+            label: "プロフィール",
+          },
+          { link: "http://example.com", label: "ログアウト" },
         ]}
       />
       <main
