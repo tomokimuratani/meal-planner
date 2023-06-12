@@ -113,7 +113,7 @@ export function HeaderMenuColored({ links }: HeaderSearchProps) {
   });
 
   return (
-    <Header height={56} className={classes.header} mb={120}>
+    <Header height={56} className={classes.header}>
       <Container>
         <div className={classes.inner}>
           <MantineLogo size={28} inverted />
