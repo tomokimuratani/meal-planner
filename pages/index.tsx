@@ -3,6 +3,10 @@ import { Inter } from "next/font/google";
 import { HeaderMenuColored } from "@/components/Header";
 import { FooterSocial } from "@/components/Footer";
 import { Homeprofile } from "@/components/Homeprofile";
+import { Stats } from "@/components/Stats";
+import Chart from "@/components/Chart";
+import { Container, Flex } from "@mantine/core";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -25,11 +29,18 @@ export default function Home() {
           { link: "http://example.com", label: "ログアウト" },
         ]}
       />
-      <main
-        className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-      >
-        <Homeprofile />
-      </main>
+      <Homeprofile />
+      <Flex justify="flex-start" align="center" direction="row" gap={50}>
+        <Container
+          fluid={true}
+          style={{ width: "60%", marginLeft: 0, marginRight: 0 }}
+        >
+          <Chart />
+        </Container>
+        <Container fluid={true} style={{ marginLeft: 0, marginRight: 0 }}>
+          <Stats />
+        </Container>
+      </Flex>
       <FooterSocial />
     </>
   );
