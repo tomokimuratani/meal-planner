@@ -5,7 +5,8 @@ import { FooterSocial } from "@/components/Footer";
 import { Homeprofile } from "@/components/Homeprofile";
 import { Stats } from "@/components/Stats";
 import Chart from "@/components/Chart";
-import { Container, Flex } from "@mantine/core";
+import { Container, Flex, Table } from "@mantine/core";
+import { Demo } from "@/components/Table";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,6 +42,7 @@ export default function Home() {
           <Stats />
         </Container>
       </Flex>
+      <Demo />
       <FooterSocial />
     </>
   );
