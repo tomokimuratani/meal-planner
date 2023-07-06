@@ -15,7 +15,7 @@ export function Demo() {
   return (
     <>
       <Container size="xl" className={styles.table_continer}>
-        <Table>
+        <Table style={{ border: "1px solid #ccc" }}>
           <tbody>
             <tr>
               {elements.map((element) => {
@@ -29,7 +29,11 @@ export function Demo() {
             <tr>
               {elements.map((element) => {
                 return (
-                  <td key={element.id} className={styles.table_div}>
+                  <td
+                    key={element.id}
+                    className={styles.table_div}
+                    style={{ border: "1px solid #ccc" }}
+                  >
                     <div> </div>
                   </td>
                 );
@@ -38,7 +42,11 @@ export function Demo() {
             <tr>
               {elements.map((element) => {
                 return (
-                  <th key={element.id} className={styles.table_button}>
+                  <th
+                    key={element.id}
+                    className={styles.table_button}
+                    style={{ textAlign: "center" }}
+                  >
                     <Button
                       variant="gradient"
                       gradient={{ from: "teal", to: "lime", deg: 105 }}
@@ -52,7 +60,11 @@ export function Demo() {
             <tr>
               {elements.map((element) => {
                 return (
-                  <td key={element.id} className={styles.table_total}>
+                  <td
+                    key={element.id}
+                    className={styles.table_total}
+                    style={{ border: "1px solid #ccc" }}
+                  >
                     <dl>
                       <dt>合計</dt>-<dd></dd>
                     </dl>
