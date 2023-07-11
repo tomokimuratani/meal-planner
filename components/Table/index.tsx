@@ -1,6 +1,7 @@
-import { Button, Container, Table } from "@mantine/core";
+import { Button, Center, Container, Table } from "@mantine/core";
 import styles from "./table.module.css";
 import { table } from "console";
+import { Buttonmenu } from "../Buttonmenu";
 export function Demo() {
   const elements = [
     { id: 1, day: "月曜日" },
@@ -20,7 +21,11 @@ export function Demo() {
             <tr>
               {elements.map((element) => {
                 return (
-                  <th key={element.id} className={styles.table_day}>
+                  <th
+                    key={element.id}
+                    className={styles.table_day}
+                    style={{ textAlign: "center" }}
+                  >
                     {element.day}
                   </th>
                 );
@@ -47,12 +52,7 @@ export function Demo() {
                     className={styles.table_button}
                     style={{ textAlign: "center" }}
                   >
-                    <Button
-                      variant="gradient"
-                      gradient={{ from: "teal", to: "lime", deg: 105 }}
-                    >
-                      入力
-                    </Button>
+                    <Buttonmenu />
                   </th>
                 );
               })}
