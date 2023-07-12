@@ -9,6 +9,7 @@ import {
   IconSun,
   IconMoon,
 } from "@tabler/icons-react";
+import { Buttonsmenumodal } from "../Buttonsmenumodal";
 
 export function Buttonmenu() {
   const theme = useMantineTheme();
@@ -33,21 +34,21 @@ export function Buttonmenu() {
             <IconAlarm size="1rem" color={theme.colors.blue[6]} stroke={1.5} />
           }
         >
-          朝
+          <Buttonsmenumodal />
         </Menu.Item>
         <Menu.Item
           icon={
             <IconSun size="1rem" color={theme.colors.orange[6]} stroke={1.5} />
           }
         >
-          昼
+          <Buttonsmenumodal />
         </Menu.Item>
         <Menu.Item
           icon={
             <IconMoon size="1rem" color={theme.colors.yellow[6]} stroke={1.5} />
           }
         >
-          夜
+          <Buttonsmenumodal />
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>
